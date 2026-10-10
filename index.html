@@ -97,8 +97,9 @@ html.embed footer{display:none}
 }
 
 .counts .ck{display:flex;gap:6px;align-items:baseline}.counts .ck b{width:1.2em;flex:none}
+.rep .turns td:nth-child(2){color:var(--ink);font-weight:400}.rep .turns td:first-child{color:var(--accent);font-weight:700;width:1.6em}.rep .turns td b{color:var(--accent)}
 </style></head><body>
-<header><h1>ターナー女性の告知 ロールプレイ</h1><div class="sub">返答を選ぶと、お母さんが声で答えます</div></header>
+<header><h1>ターナー女性の告知 ロールプレイ</h1><div class="sub">返答を選ぶと、お母さんが声で答えます（メーターは演出用）</div></header>
 <main>
  <aside><div class="who"><img class="av" src="img/mother_neutral.webp" alt=""><div><b id="pname"></b><small>30代・6歳女児の母</small></div></div><img id="pav" class="bigav" src="img/mother_neutral.webp" alt=""><div class="profile" id="profile"></div></aside>
  <section id="chat"><div id="log"></div><div id="choices"></div></section>
@@ -112,13 +113,13 @@ html.embed footer{display:none}
 <footer>教育用デモ。登場人物はすべて架空です。評価は、悪い知らせを伝える手順（SPIKES）と性分化疾患診療ガイドライン2025（CQ3・CQ20）の要点を簡略化した目安で、実際の評価基準ではありません。 音声は Google Gemini 3.8 Flash TTS、イラストは Gemini 3.1 Flash Image で生成しました。 © 2026 Masahide Koda（東北大学 公衆衛生学分野）</footer>
 <div id="overlay"><div class="card"><img class="hero" src="img/title.webp" alt=""><h2 id="t-title">ターナー女性の告知 ロールプレイ</h2><p id="t-intro"></p><button id="startbtn">面談をはじめる</button><p class="small" style="margin-top:12px">音声が流れます。スピーカーまたはイヤホンをご用意ください。</p><p class="small">教育用デモ。登場人物はすべて架空です。評価は、悪い知らせを伝える手順（SPIKES）と性分化疾患診療ガイドライン2025（CQ3・CQ20）の要点を簡略化した目安で、実際の評価基準ではありません。</p></div></div>
 <script>
-const Q=new URLSearchParams(location.search), DEMO=Q.get('demo'); // demo=best|good|neutral|poor → 自動で進む
-let S,CODE,GOOD,CHECK,m,cur,codes=[],hist=[],T0=performance.now();window.__clips=[];
+const Q=new URLSearchParams(location.search), DEMO=Q.get('demo'); // demo=settled|misinfo|unsure|overwhelmed
+let S,CODE,SC,m,cur,hist=[],F={},T0=performance.now();window.__clips=[];
 const MK=['understanding','trust','distress'];
 const $=s=>document.querySelector(s), log=$('#log');
+const VL={good:'◎',review:'△',correct:'✕'};
 function setMeters(){for(const k of MK){m[k]=Math.max(0,Math.min(100,m[k]));$('#m-'+k+' i').style.width=m[k]+'%';$('#m-'+k+' .v').textContent=m[k]}
- const bad=codes.filter(c=>!GOOD.has(c)).length;
- $('#counts').innerHTML=CHECK.map(x=>`<div class="ck"><b>${codes.some(c=>x.codes.includes(c))?'✓':'・'}</b><span>${x.label}</span></div>`).join('')+`<div class="ck"><b>${bad}</b><span>勧めない返答</span></div>`}
+ $('#counts').innerHTML=SC.checklist.map(x=>{const h=hist.find(h=>h.node.startsWith(x.scene));const mk=h?VL[h.c.verdict]:'・';return `<div class="ck"><b>${mk}</b><span>${x.label}</span></div>`}).join('')}
 function mood(){const f=m.distress>=80?'tearful':m.distress>=65?'anxious':(m.distress<=40&&m.trust>=55)?'relieved':'neutral';const im=$('#pav');if(!im.src.endsWith(f+'.webp')){im.style.opacity=0;setTimeout(()=>{im.src='img/mother_'+f+'.webp';im.style.opacity=1},250)}return f}
 const MOB=()=>matchMedia('(max-width:820px)').matches;function sb(){if(MOB())requestAnimationFrame(()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'}))}
 function add(cls,html){const d=document.createElement('div');d.className=cls;d.innerHTML=html;log.appendChild(d);log.scrollTop=log.scrollHeight;sb();return d}
@@ -127,42 +128,43 @@ let AU=null;function unlockAudio(){if(AU)return;AU=new Audio();AU.playsInline=tr
 function play(src,label){return new Promise(res=>{unlockAudio();const a=AU;a.onended=null;a.onerror=null;a.src=src;window.__clips.push({src,t:(performance.now()-T0)/1000});
  const sp=add('speaking',`<span class="wave"><i></i><i></i><i></i><i></i><i></i></span>${label}`);
  a.onended=()=>{sp.remove();res()};a.onerror=()=>{sp.remove();setTimeout(res,1500)};a.play().catch(()=>{sp.remove();setTimeout(res,1500)})})}
-async function motherSay(id){const n=S.nodes[id];await play(`audio/${id}.mp3`,'お母さんが話しています…');add('row p',`<img class="mini" src="img/mother_${mood()}.webp"><div class="msg p">${n.mother}</div>`)}
-async function showNode(id){cur=id;const n=S.nodes[id];await motherSay(id);
- if(n.end){return report(n.end)}
+const strip=t=>t.replace(/^（[^）]*）/,'');
+async function motherSay(src,text){await play(src,'お母さんが話しています…');add('row p',`<img class="mini" src="img/mother_${mood()}.webp"><div class="msg p">${text}</div>`)}
+async function doctorSay(src,text,tag){add('row d',`<div class="msg d">${text}${tag?`<span class="tag">${tag}</span>`:''}</div><img class="mini" src="img/doctor.webp">`);await play(src,'あなた（医師）')}
+const goodN=()=>hist.filter(h=>h.c.verdict==='good').length;
+function setFlags(c){for(const [k,f] of Object.entries(SC.flags)){if((f.set_by_codes||[]).includes(c.code))F[k]=true;if(f.set_by_verdict&&c.verdict===f.set_by_verdict)F[k]=true}}
+function ending(){const g=goodN();for(const r of SC.ending.rules){if(r.good_min!=null&&g<r.good_min)continue;if(r.require_flags&&!Object.entries(r.require_flags).every(([k,v])=>!!F[k]===v))continue;return r.end}return SC.ending.rules.at(-1).end}
+function endText(n){let t=n.mother,idx=-1;(n.mother_variants||[]).forEach((v,i)=>{if(idx<0&&Object.entries(v.when).every(([k,val])=>!!F[k]===val)){idx=i;t=v.text}});return [t,idx]}
+async function showNode(id){cur=id;const n=S.nodes[id];
+ if(n.end){const [t,i]=endText(n);await motherSay(`audio/${id}${i>=0?'_v'+i:''}.mp3`,t);return report(id)}
+ await motherSay(`audio/${id}.mp3`,n.mother);
  const box=$('#choices');box.innerHTML='<div class="hint">返答を選んでください（タップ／クリック）</div>';
  n.choices.forEach((c,i)=>{const b=document.createElement('button');b.textContent=c.label;b.onclick=()=>choose(i);box.appendChild(b)});sb();
  if(DEMO){const pick=(S.demo&&S.demo[DEMO]||{})[id];await sleep(1600);const bs=box.querySelectorAll('button');const i=pick??0;bs[i].classList.add('hl');await sleep(1100);choose(i)}}
 async function choose(i){const n=S.nodes[cur],c=n.choices[i];$('#choices').innerHTML='';
- add('row d',`<div class="msg d">${c.label}<span class="tag">${CODE[c.code]||c.code}</span></div><img class="mini" src="img/doctor.webp">`);codes.push(c.code);hist.push({node:cur,i});
- await play(`audio/${cur}_c${i}.mp3`,'あなた（医師）');
+ hist.push({node:cur,i,c});setFlags(c);
+ await doctorSay(`audio/${cur}_c${i}.mp3`,c.label,CODE[c.code]);
  for(const k in c.delta)m[k]+=c.delta[k];setMeters();mood();
- const ok=GOOD.has(c.code);add('tip '+(ok?'good':'bad'),(ok?'◎ ':'△ ')+c.feedback);
- await sleep(DEMO?1800:900);showNode(c.next)}
-const val=c=>c.delta.understanding+c.delta.trust-c.delta.distress;
-function report(end){const good=codes.filter(x=>GOOD.has(x)).length;
- const meter=(m.understanding+m.trust+(100-m.distress))/300;
- const score=Math.max(0,Math.min(100,Math.round(60*good/Math.max(1,codes.length)+40*meter)));
- const grade=score>=80?'A':score>=60?'B':'C';
- const fk=(end==='good'&&grade==='C')?'good_c':end;
- const v={good:'お母さんと次の一歩を共有できました',good_c:'次につなげられましたが、立て直しに頼った面談でした',neutral:'結果は伝わりましたが、整理がつかないまま帰りました',poor:'お母さんが受け止めきれずに帰りました'}[fk];
- const rows=hist.map((h,k)=>{const n=S.nodes[h.node],ch=n.choices[h.i],ok=GOOD.has(ch.code);let alt='';
-   if(!ok){const best=n.choices.filter(x=>GOOD.has(x.code)).sort((a,b)=>val(b)-val(a))[0];
-     if(best)alt=`<div class="alt">よりよい返答の例：「${best.label}」（${CODE[best.code]}）</div>`}
-   return `<tr><td>${k+1}</td><td>${ok?'◎':'△'}</td><td>「${ch.label}」<br><span class="small">${CODE[ch.code]}：${ch.feedback}</span>${alt}</td></tr>`}).join('');
- const ck=CHECK.map(x=>`<tr><td>${x.label}</td><td>${codes.some(c=>x.codes.includes(c))?'できた':'—'}</td></tr>`).join('');
- $('#overlay').innerHTML=`<div class="card rep"><img class="hero" src="img/end_${end}.webp" alt=""><h2>面談の振り返り</h2><div class="verdict">${v}</div>
- <div class="score"><span class="big">${score}</span><span>/ 100点</span><span class="grade">評価 ${grade}</span></div>
- <p class="small">点数の内訳：勧める返答の割合（60点）＋面談の終わりのお母さんの状態（理解・信頼・不安の低さ、40点）</p>
- <table>${ck}<tr><td>勧めない返答（専門用語、「異常」などの語、根拠のない「大丈夫」、先送りなど）</td><td>${codes.filter(c=>!GOOD.has(c)).length}</td></tr>
- <tr><td>理解／信頼／不安</td><td>${m.understanding} / ${m.trust} / ${m.distress}</td></tr></table>
- <h3>返答ごとの振り返り</h3><table class="turns">${rows}</table>
- <h3>指導医からの講評</h3><p>${(S.feedback_voice||{})[fk]||''}</p>
+ add('tip '+(c.verdict==='good'?'good':'bad'),VL[c.verdict]+' '+c.feedback);
+ await sleep(DEMO?1800:900);
+ if(c.next==='END'){if(S.closing){await doctorSay('audio/closing_doctor.mp3',S.closing.doctor,'');await motherSay('audio/closing_mother.mp3',S.closing.mother)}showNode(ending())}else showNode(c.next)}
+function src(x){const s=x.source||{};return Object.entries(SC.source_kinds).filter(([k])=>s[k]).map(([k,l])=>`${l.replace(/（.*$/,'')}：${s[k]}`).join('／')}
+function report(id){const n=S.nodes[id],ek=n.end;
+ const rows=SC.checklist.map(x=>{const h=hist.find(h=>h.node.startsWith(x.scene));if(!h)return '';const c=h.c;let alt='';
+   if(c.verdict!=='good'){const best=S.nodes[h.node].choices.filter(y=>y.verdict==='good')[0];if(best)alt=`<div class="alt">別の言い方：「${best.label}」</div>`}
+   return `<tr><td>${VL[c.verdict]}</td><td><b>${x.label}</b><br>${c.verdict==='good'?'できたこと：'+c.did:(c.verdict==='correct'?'訂正が必要：':'見直したいこと：')+(c.revisit||'')}<br><span class="small">選んだ返答「${c.label}」<br>${c.feedback}</span>${alt}<div class="small">根拠：${src(x)}</div></td></tr>`}).join('');
+ const corr=hist.filter(h=>h.c.verdict==='correct');
+ const corrHtml=corr.length?`<h3>訂正が必要</h3><p>${corr.map(h=>'「'+h.c.label+'」：'+(h.c.revisit||'')).join('<br>')}</p>`:'';
+ $('#overlay').innerHTML=`<div class="card rep"><img class="hero" src="img/${id}.webp" alt=""><h2>面談の振り返り</h2><div class="verdict">${n.title}</div>
+ <p>${S.feedback_voice[ek]||''}</p>
+ <p class="small">この教材の目標：${S.goal}</p>
+ ${corrHtml}
+ <h3>場面ごとの振り返り</h3><table class="turns">${rows}</table>
  <p class="small">※教育用デモ。登場人物はすべて架空です。評価は、悪い知らせを伝える手順（SPIKES）と性分化疾患診療ガイドライン2025（CQ3・CQ20）の要点を簡略化した目安で、実際の評価基準ではありません。</p>
- <button class="fbbtn" onclick="AU.src='audio/feedback_${fk}.mp3';AU.play()">講評をもう一度聞く</button><button onclick="location.href=location.pathname">もう一度</button></div>`;
- $('#overlay').style.display='grid';unlockAudio();const fa=AU;fa.onended=null;fa.src=`audio/feedback_${fk}.mp3`;window.__clips.push({src:`audio/feedback_${fk}.mp3`,t:(performance.now()-T0)/1000});fa.play().catch(()=>{});
+ <button class="fbbtn" onclick="AU.src='audio/feedback_${ek}.mp3';AU.play()">もう一度聞く</button><button onclick="location.href=location.pathname">もう一度</button></div>`;
+ $('#overlay').style.display='grid';unlockAudio();const fa=AU;fa.onended=null;fa.src=`audio/feedback_${ek}.mp3`;fa.play().catch(()=>{});
  if(DEMO){let y=0;const card=$('.rep');const iv=setInterval(()=>{y+=3;card.scrollTop=y;if(y>card.scrollHeight)clearInterval(iv)},60)}}
-fetch('scenario.json').then(r=>r.json()).then(j=>{S=j;CODE=S.scoring.code_labels;GOOD=new Set(S.scoring.good_codes);CHECK=S.scoring.checklist;m={...S.meters};
+fetch('scenario.json').then(r=>r.json()).then(j=>{S=j;SC=S.scoring;CODE=SC.code_labels;m={...S.meters};
  for(const k of MK)$('#m-'+k+' .lbl span').textContent=S.meter_labels[k];
  $('#t-intro').textContent=S.intro||'';$('#pname').textContent=S.patient.name;$('#pav').alt=S.patient.name;$('#profile').textContent=S.patient.profile;setMeters();
  const go=()=>{$('#overlay').style.display='none';T0=performance.now();showNode(S.start)};

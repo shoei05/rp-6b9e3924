@@ -5,6 +5,7 @@
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
 <meta name="description" content="返答を選ぶと、お母さんが声で答える。染色体検査の結果を伝える面談を練習する教育用デモ。">
+<meta name="scenario-version" content="ece7bca1c38a3ca6">
 <style>
 :root{--accent:#c5487b;--ink:#1f1d1e;--muted:#5d6468;--pinkbg:#f9eaf0;--bluebg:#e7f2f5;--blue:#3B9AB2;--lblue:#a9ccd6;--gold:#E1AF00;--line:#e3e6e8;--text:var(--ink);--sub:var(--muted)}
 *{box-sizing:border-box}
@@ -115,6 +116,12 @@ html.embed footer{display:none}
 <script>
 const Q=new URLSearchParams(location.search), DEMO=Q.get('demo'); // demo=settled|misinfo|unsure|overwhelmed
 let S,CODE,SC,m,cur,hist=[],F={},T0=performance.now();window.__clips=[];
+// 版の印（ビルド時に埋め込む）。scenario.json と音声の URL に付け、古いキャッシュと混ざらないようにする
+const SCEN_V='ece7bca1c38a3ca6',AV={"n1.mp3":"51dc195e7a65","n1_c0.mp3":"26d143eacfc7","n1_c1.mp3":"05fd1783177a","n1_c2.mp3":"8bc64d16fe88","n2a.mp3":"2960a663d793","n2a_c0.mp3":"d327ba52dcfb","n2a_c1.mp3":"1424befa14e2","n2a_c2.mp3":"655fbb4d70de","n2b.mp3":"a5a6b8f463b8","n2b_c0.mp3":"1424befa14e2","n2b_c1.mp3":"655fbb4d70de","n2b_c2.mp3":"d327ba52dcfb","n2c.mp3":"8e5d007fdffd","n2c_c0.mp3":"655fbb4d70de","n2c_c1.mp3":"d327ba52dcfb","n2c_c2.mp3":"1424befa14e2","n3a.mp3":"2d5eb2f9c77f","n3a_c0.mp3":"ba57d01d4b10","n3a_c1.mp3":"b0fed6a256ae","n3a_c2.mp3":"9c450c8146b5","n3b.mp3":"7f11ef3f6a7e","n3b_c0.mp3":"9c450c8146b5","n3b_c1.mp3":"ba57d01d4b10","n3b_c2.mp3":"b0fed6a256ae","n3c.mp3":"bce07b9d0ecc","n3c_c0.mp3":"b0fed6a256ae","n3c_c1.mp3":"9c450c8146b5","n3c_c2.mp3":"ba57d01d4b10","n4a.mp3":"238b4cd76b51","n4a_c0.mp3":"8ab513036d01","n4a_c1.mp3":"f096e74c8e72","n4a_c2.mp3":"32d1ae43501f","n4b.mp3":"8388635456f8","n4b_c0.mp3":"32d1ae43501f","n4b_c1.mp3":"8ab513036d01","n4b_c2.mp3":"f096e74c8e72","n4c.mp3":"dc0d387ab426","n4c_c0.mp3":"f096e74c8e72","n4c_c1.mp3":"32d1ae43501f","n4c_c2.mp3":"8ab513036d01","n5a.mp3":"7689b2b3504e","n5a_c0.mp3":"7f857ca48370","n5a_c1.mp3":"7d5198d7ea9b","n5a_c2.mp3":"bdd85711675a","n5b.mp3":"16c1a0596335","n5b_c0.mp3":"bdd85711675a","n5b_c1.mp3":"7f857ca48370","n5b_c2.mp3":"7d5198d7ea9b","n5c.mp3":"6d2a850a96d2","n5c_c0.mp3":"7f857ca48370","n5c_c1.mp3":"7d5198d7ea9b","n5c_c2.mp3":"be45532b046c","n6a.mp3":"5d6aa58baf9a","n6a_c0.mp3":"5f4b7f53eeef","n6a_c1.mp3":"bdc7b32b9485","n6a_c2.mp3":"2992418bd340","n6b.mp3":"e1bb2f2bed3b","n6b_c0.mp3":"2992418bd340","n6b_c1.mp3":"66540889c603","n6b_c2.mp3":"bdc7b32b9485","n6c.mp3":"b10b3fd1213a","n6c_c0.mp3":"bdc7b32b9485","n6c_c1.mp3":"a6689f94cb60","n6c_c2.mp3":"2992418bd340","n7a.mp3":"73fe9d717a0f","n7a_c0.mp3":"8412ae62f321","n7a_c1.mp3":"e5bdd340a09a","n7a_c2.mp3":"4c7720c8c870","n7b.mp3":"ccc26504ba59","n7b_c0.mp3":"e5bdd340a09a","n7b_c1.mp3":"4c7720c8c870","n7b_c2.mp3":"8412ae62f321","n7c.mp3":"6f779ced7113","n7c_c0.mp3":"4c7720c8c870","n7c_c1.mp3":"8412ae62f321","n7c_c2.mp3":"e5bdd340a09a","end_settled.mp3":"c6fb38513536","end_unsure.mp3":"505a87999ceb","end_unsure_v0.mp3":"9e96475537f7","end_unsure_v1.mp3":"5816b4a0adda","end_overwhelmed.mp3":"15ca333d2bc9","end_overwhelmed_v0.mp3":"17c5df0f7c4b","closing_doctor.mp3":"4754c4921bbb","closing_mother.mp3":"ec5f84382496","feedback_settled.mp3":"8e26c473917c","feedback_unsure.mp3":"71d1233ef7ed","feedback_overwhelmed.mp3":"baa059d23318"};window.__ver={scenario:SCEN_V,audio:AV};
+const au=f=>`audio/${f}?v=${AV[f]||SCEN_V}`;
+function stale(msg){let b=document.getElementById('stale');if(!b){b=document.createElement('div');b.id='stale';b.style.cssText='position:fixed;left:0;right:0;top:0;z-index:9999;background:#c5487b;color:#fff;padding:10px 16px;font-size:14px;text-align:center';document.body.appendChild(b)}
+ b.innerHTML=msg+' <button onclick="location.reload()" style="margin-left:8px">再読み込み</button>'}
+async function sha256hex(buf){const h=await crypto.subtle.digest('SHA-256',buf);return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 const MK=['understanding','trust','distress'];
 const $=s=>document.querySelector(s), log=$('#log');
 const VL={good:'◎',review:'△',correct:'✕'};
@@ -136,18 +143,18 @@ function setFlags(c){for(const [k,f] of Object.entries(SC.flags)){if((f.set_by_c
 function ending(){const g=goodN();for(const r of SC.ending.rules){if(r.good_min!=null&&g<r.good_min)continue;if(r.require_flags&&!Object.entries(r.require_flags).every(([k,v])=>!!F[k]===v))continue;return r.end}return SC.ending.rules.at(-1).end}
 function endText(n){let t=n.mother,idx=-1;(n.mother_variants||[]).forEach((v,i)=>{if(idx<0&&Object.entries(v.when).every(([k,val])=>!!F[k]===val)){idx=i;t=v.text}});return [t,idx]}
 async function showNode(id){cur=id;const n=S.nodes[id];
- if(n.end){const [t,i]=endText(n);await motherSay(`audio/${id}${i>=0?'_v'+i:''}.mp3`,t);return report(id)}
- await motherSay(`audio/${id}.mp3`,n.mother);
+ if(n.end){const [t,i]=endText(n);await motherSay(au(`${id}${i>=0?'_v'+i:''}.mp3`),t);return report(id)}
+ await motherSay(au(`${id}.mp3`),n.mother);
  const box=$('#choices');box.innerHTML='<div class="hint">返答を選んでください（タップ／クリック）</div>';
  n.choices.forEach((c,i)=>{const b=document.createElement('button');b.textContent=c.label;b.onclick=()=>choose(i);box.appendChild(b)});sb();
  if(DEMO){const pick=(S.demo&&S.demo[DEMO]||{})[id];await sleep(1600);const bs=box.querySelectorAll('button');const i=pick??0;bs[i].classList.add('hl');await sleep(1100);choose(i)}}
 async function choose(i){const n=S.nodes[cur],c=n.choices[i];$('#choices').innerHTML='';
  hist.push({node:cur,i,c});setFlags(c);
- await doctorSay(`audio/${cur}_c${i}.mp3`,c.label,CODE[c.code]);
+ await doctorSay(au(`${cur}_c${i}.mp3`),c.label,CODE[c.code]);
  for(const k in c.delta)m[k]+=c.delta[k];setMeters();mood();
  add('tip '+(c.verdict==='good'?'good':'bad'),VL[c.verdict]+' '+c.feedback);
  await sleep(DEMO?1800:900);
- if(c.next==='END'){if(S.closing){await doctorSay('audio/closing_doctor.mp3',S.closing.doctor,'');await motherSay('audio/closing_mother.mp3',S.closing.mother)}showNode(ending())}else showNode(c.next)}
+ if(c.next==='END'){if(S.closing){await doctorSay(au('closing_doctor.mp3'),S.closing.doctor,'');await motherSay(au('closing_mother.mp3'),S.closing.mother)}showNode(ending())}else showNode(c.next)}
 function src(x){const s=x.source||{};return Object.entries(SC.source_kinds).filter(([k])=>s[k]).map(([k,l])=>`${l.replace(/（.*$/,'')}：${s[k]}`).join('／')}
 function report(id){const n=S.nodes[id],ek=n.end;
  const rows=SC.checklist.map(x=>{const h=hist.find(h=>h.node.startsWith(x.scene));if(!h)return '';const c=h.c;let alt='';
@@ -161,10 +168,13 @@ function report(id){const n=S.nodes[id],ek=n.end;
  ${corrHtml}
  <h3>場面ごとの振り返り</h3><table class="turns">${rows}</table>
  <p class="small">※教育用デモ。登場人物はすべて架空です。評価は、悪い知らせを伝える手順（SPIKES）と性分化疾患診療ガイドライン2025（CQ3・CQ20）の要点を簡略化した目安で、実際の評価基準ではありません。</p>
- <button class="fbbtn" onclick="AU.src='audio/feedback_${ek}.mp3';AU.play()">もう一度聞く</button><button onclick="location.href=location.pathname">もう一度</button></div>`;
- $('#overlay').style.display='grid';unlockAudio();const fa=AU;fa.onended=null;fa.src=`audio/feedback_${ek}.mp3`;fa.play().catch(()=>{});
+ <button class="fbbtn" onclick="AU.src=au('feedback_${ek}.mp3');AU.play()">もう一度聞く</button><button onclick="location.href=location.pathname">もう一度</button></div>`;
+ $('#overlay').style.display='grid';unlockAudio();const fa=AU;fa.onended=null;fa.src=au(`feedback_${ek}.mp3`);window.__clips.push({src:fa.src,t:(performance.now()-T0)/1000});fa.play().catch(()=>{});
  if(DEMO){let y=0;const card=$('.rep');const iv=setInterval(()=>{y+=3;card.scrollTop=y;if(y>card.scrollHeight)clearInterval(iv)},60)}}
-fetch('scenario.json').then(r=>r.json()).then(j=>{S=j;SC=S.scoring;CODE=SC.code_labels;m={...S.meters};
+fetch('scenario.json?v='+SCEN_V,{cache:'no-cache'}).then(r=>r.arrayBuffer()).then(async buf=>{
+ let h='';try{h=(await sha256hex(buf)).slice(0,16)}catch(e){}
+ if(h&&h!==SCEN_V){const once=sessionStorage.getItem('reloaded')!==SCEN_V;if(once){sessionStorage.setItem('reloaded',SCEN_V);location.reload();return}stale('教材の文章と音声の版が合っていません（画面 '+SCEN_V+' / 読み込んだ文章 '+h+'）。ブラウザを再読み込みしてください。')}
+ return JSON.parse(new TextDecoder().decode(buf))}).then(j=>{if(!j)return;S=j;SC=S.scoring;CODE=SC.code_labels;m={...S.meters};
  for(const k of MK)$('#m-'+k+' .lbl span').textContent=S.meter_labels[k];
  $('#t-intro').textContent=S.intro||'';$('#pname').textContent=S.patient.name;$('#pav').alt=S.patient.name;$('#profile').textContent=S.patient.profile;setMeters();
  const go=()=>{$('#overlay').style.display='none';T0=performance.now();showNode(S.start)};

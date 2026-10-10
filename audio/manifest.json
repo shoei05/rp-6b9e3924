@@ -1,0 +1,698 @@
+{
+ "closing_doctor.mp3": {
+  "fp": "8ef842b4d9c5",
+  "md5": "4754c4921bbb7a0ee58664e89797beeb",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "今日は急なお話で、お疲れになったと思います。今日の要点を書いたものと、相談窓口と家族会の案内をお渡しします。次の予約を取って帰ってください。分からないことは、次回でなくても、いつでも聞いてください。",
+  "adopted": true
+ },
+ "closing_mother.mp3": {
+  "fp": "27ad1a6f0317",
+  "md5": "ec5f843824961b22502b0a3a607c3211",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[quiet, a little tired] はい。ありがとうございます。",
+  "adopted": true
+ },
+ "end_overwhelmed.mp3": {
+  "fp": "74f3668ca755",
+  "md5": "15ca333d2bc9f8ff735e7d4964d3f4cd",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[overwhelmed, quiet] ……すみません、今日はもう、何も考えられなくて。失礼します。",
+  "adopted": true
+ },
+ "end_overwhelmed_v0.mp3": {
+  "fp": "ea88fdf101a3",
+  "md5": "17c5df0f7c4bf9a87b452a6f47ff580a",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[overwhelmed, quiet] ……やっぱり、私のせいなんでしょうか。すみません、今日はもう、何も考えられなくて。失礼します。",
+  "adopted": true
+ },
+ "end_settled.mp3": {
+  "fp": "15b7dd2ad5f9",
+  "md5": "c6fb38513536f4502220b14aa54441fa",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[moved, calm, resolved] 今は、この子が元気に育つことを考えます。夫にも話して、また伺います。めっけにも、先生と一緒に少しずつ伝えていけたら。",
+  "adopted": true
+ },
+ "end_unsure.mp3": {
+  "fp": "461f96fd450a",
+  "md5": "505a87999ceb744e2935f54c0886138c",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[tired, quiet] 分かりました……。まだ整理がつかないので、いただいた案内を読んで、自分でも少し調べてみます。また伺います。",
+  "adopted": true
+ },
+ "end_unsure_v0.mp3": {
+  "fp": "38e2823622a7",
+  "md5": "9e96475537f7611e7a19ee696d7ba37c",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[tired, quiet] 分かりました……。ただ、私のせいだったのかという気持ちが、まだ残っていて。案内を読んで、また伺います。",
+  "built": "2026-10-10T22:22:16"
+ },
+ "end_unsure_v1.mp3": {
+  "fp": "992e8950d151",
+  "md5": "5816b4a0addaa0b25151f8cdd70c3e8a",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[tired, quiet] 分かりました……。まだ整理がつかないので、いただいた案内を読んでみます。めっけへの伝え方は、また相談させてください。",
+  "adopted": true
+ },
+ "feedback_overwhelmed.mp3": {
+  "fp": "fbfdc15462ea",
+  "md5": "baa059d233186750338089f118557d83",
+  "voice": "Sulafat",
+  "speaker": "coach",
+  "text": "お母さんは、受け止めきれないまま帰りました。次の受診までに、電話や相談窓口で話せる機会があると支えになります。",
+  "adopted": true
+ },
+ "feedback_settled.mp3": {
+  "fp": "583c5fa83285",
+  "md5": "8e26c473917cc143b4543f9fb1866951",
+  "voice": "Sulafat",
+  "speaker": "coach",
+  "text": "お母さんは、少し落ち着いて帰りました。今日の要点と相談先を手に、ご主人と話してから、また来院する予定です。",
+  "adopted": true
+ },
+ "feedback_unsure.mp3": {
+  "fp": "d68e80ad2278",
+  "md5": "71d1233ef7ed9ad73c023ebd1d4edf24",
+  "voice": "Sulafat",
+  "speaker": "coach",
+  "text": "お母さんは、まだ整理がつかないまま帰りました。案内を読み、分からないことは次の受診で聞くつもりでいます。",
+  "adopted": true
+ },
+ "n1.mp3": {
+  "fp": "20c309e23e8c",
+  "md5": "51dc195e7a650631e7c886dbc55f1ee6",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[anxious, quiet, hesitant] よろしくお願いします。やっぱり、ホルモンが足りないんでしょうか。",
+  "adopted": true
+ },
+ "n1_c0.mp3": {
+  "fp": "bc8bb67772b9",
+  "md5": "26d143eacfc7541116f9153947dbee4b",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "大事な結果ですので、お話しする前に先に伺います。今日の結果について、どのくらい詳しくお聞きになりたいですか。細かい数字まででも構いません。",
+  "adopted": true
+ },
+ "n1_c1.mp3": {
+  "fp": "d04f91598ee0",
+  "md5": "05fd1783177a0305a837b6bec2c960e5",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "前回は、ホルモンと、ターナーという体質を調べる染色体の検査をしましたね。結果をお伝えする前に、このあいだ、どんなことが気になっていましたか。",
+  "adopted": true
+ },
+ "n1_c2.mp3": {
+  "fp": "9bdbe754ad1f",
+  "md5": "8bc64d16fe88d268d9c2f74cd10e30aa",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "結果の前に、染色体の一般的なお話をしますね。染色体には常染色体と性染色体があって、性染色体はXとYの組み合わせで……",
+  "adopted": true
+ },
+ "n2a.mp3": {
+  "fp": "2da9de18ef99",
+  "md5": "2960a663d793c0bb32ab61661f5e62d2",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[quiet, a little tense] ホルモンが足りないのかと思っていました。ターナーのことは、怖くて調べられなくて……。結果はどうでしたか。",
+  "adopted": true
+ },
+ "n2a_c0.mp3": {
+  "fp": "5e49a1541e02",
+  "md5": "d327ba52dcfb08c167994d4ff005aaa9",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "検査の結果、染色体の異常が見つかりました。詳しいことはこれからご説明しますので、落ち着いて聞いてくださいね。",
+  "adopted": true
+ },
+ "n2a_c1.mp3": {
+  "fp": "a0ed7e29c255",
+  "md5": "1424befa14e23a3f2cf00d4d4e9105fa",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "今回調べたホルモンは問題ありませんでした。染色体は、女の子は通常エックス染色体が2本ですが、調べた細胞すべてで1本でした。ターナー症候群と分かりました。",
+  "adopted": true
+ },
+ "n2a_c2.mp3": {
+  "fp": "cf709a51b3c8",
+  "md5": "655fbb4d70de8b75ea8cb07946c332a9",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "染色体の検査の結果ですが、核型はよんじゅうご、エックスでした。この核型から、ターナー症候群と診断されます。前回お話しした可能性が、検査で確かめられた形です。",
+  "adopted": true
+ },
+ "n2b.mp3": {
+  "fp": "30bccb28645c",
+  "md5": "a5a6b8f463b80165732dc6ee9f1a2e79",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[confused, anxious] あの、私は結果を聞きに来ましたので……。結果はどうでしたか。",
+  "built": "2026-10-10T22:18:57"
+ },
+ "n2b_c0.mp3": {
+  "fp": "a0ed7e29c255",
+  "md5": "1424befa14e23a3f2cf00d4d4e9105fa",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "今回調べたホルモンは問題ありませんでした。染色体は、女の子は通常エックス染色体が2本ですが、調べた細胞すべてで1本でした。ターナー症候群と分かりました。",
+  "adopted": true
+ },
+ "n2b_c1.mp3": {
+  "fp": "cf709a51b3c8",
+  "md5": "655fbb4d70de8b75ea8cb07946c332a9",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "染色体の検査の結果ですが、核型はよんじゅうご、エックスでした。この核型から、ターナー症候群と診断されます。前回お話しした可能性が、検査で確かめられた形です。",
+  "adopted": true
+ },
+ "n2b_c2.mp3": {
+  "fp": "5e49a1541e02",
+  "md5": "d327ba52dcfb08c167994d4ff005aaa9",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "検査の結果、染色体の異常が見つかりました。詳しいことはこれからご説明しますので、落ち着いて聞いてくださいね。",
+  "adopted": true
+ },
+ "n2c.mp3": {
+  "fp": "955bf104fa11",
+  "md5": "8e5d007fdffdc4755c1b63772becf8de",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[shaken, on the verge of tears] すみません、先生。それで、めっけの結果はどうでしたか。",
+  "built": "2026-10-10T22:22:26"
+ },
+ "n2c_c0.mp3": {
+  "fp": "cf709a51b3c8",
+  "md5": "655fbb4d70de8b75ea8cb07946c332a9",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "染色体の検査の結果ですが、核型はよんじゅうご、エックスでした。この核型から、ターナー症候群と診断されます。前回お話しした可能性が、検査で確かめられた形です。",
+  "adopted": true
+ },
+ "n2c_c1.mp3": {
+  "fp": "5e49a1541e02",
+  "md5": "d327ba52dcfb08c167994d4ff005aaa9",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "検査の結果、染色体の異常が見つかりました。詳しいことはこれからご説明しますので、落ち着いて聞いてくださいね。",
+  "adopted": true
+ },
+ "n2c_c2.mp3": {
+  "fp": "a0ed7e29c255",
+  "md5": "1424befa14e23a3f2cf00d4d4e9105fa",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "今回調べたホルモンは問題ありませんでした。染色体は、女の子は通常エックス染色体が2本ですが、調べた細胞すべてで1本でした。ターナー症候群と分かりました。",
+  "adopted": true
+ },
+ "n3a.mp3": {
+  "fp": "19ef3dabf651",
+  "md5": "2d5eb2f9c77fb66762ada554aeff25e1",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[quiet, a little tense] ……ターナー……。それは、病気なんですか。治るんですか。",
+  "adopted": true
+ },
+ "n3a_c0.mp3": {
+  "fp": "132527a2e857",
+  "md5": "ba57d01d4b10968dfa7c7f3cd84f4275",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "急なお話でしたね。生まれ持った染色体の特徴です。染色体そのものを変える治療はありませんが、成長や健康を支える治療はあります。心臓や腎臓も、これから確かめていきます。",
+  "adopted": true
+ },
+ "n3a_c1.mp3": {
+  "fp": "b3241e6ba9b4",
+  "md5": "b0fed6a256ae3f6112761236f72b60d7",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "染色体の変化によるものなので、治癒は困難です。ただ、できることはありますので、順にお話ししていきますね。今日は聞くだけで大丈夫ですので、ご家族で支えていきましょう。",
+  "adopted": true
+ },
+ "n3a_c2.mp3": {
+  "fp": "f799ff64f0f3",
+  "md5": "9c450c8146b5678ae5dca3f64a052650",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご心配ですよね。でも、背が低いこと以外は、ほかは健康ですから大丈夫ですよ。治療で背を伸ばしていけば、ほかのお子さんと変わらず過ごせます。",
+  "adopted": true
+ },
+ "n3b.mp3": {
+  "fp": "f9153948df84",
+  "md5": "7f11ef3f6a7e1b92a388951094ac5f50",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[confused, anxious] すみません、よく分からなくて……。それは、病気なんですか。治るんですか。",
+  "adopted": true
+ },
+ "n3b_c0.mp3": {
+  "fp": "f799ff64f0f3",
+  "md5": "9c450c8146b5678ae5dca3f64a052650",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご心配ですよね。でも、背が低いこと以外は、ほかは健康ですから大丈夫ですよ。治療で背を伸ばしていけば、ほかのお子さんと変わらず過ごせます。",
+  "adopted": true
+ },
+ "n3b_c1.mp3": {
+  "fp": "132527a2e857",
+  "md5": "ba57d01d4b10968dfa7c7f3cd84f4275",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "急なお話でしたね。生まれ持った染色体の特徴です。染色体そのものを変える治療はありませんが、成長や健康を支える治療はあります。心臓や腎臓も、これから確かめていきます。",
+  "adopted": true
+ },
+ "n3b_c2.mp3": {
+  "fp": "b3241e6ba9b4",
+  "md5": "b0fed6a256ae3f6112761236f72b60d7",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "染色体の変化によるものなので、治癒は困難です。ただ、できることはありますので、順にお話ししていきますね。今日は聞くだけで大丈夫ですので、ご家族で支えていきましょう。",
+  "adopted": true
+ },
+ "n3c.mp3": {
+  "fp": "f40bbc82e686",
+  "md5": "bce07b9d0ecc8a395e08fb1d62452e0f",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[shaken, on the verge of tears] ……めっけは、病気なんですか。治るんですか。",
+  "built": "2026-10-10T22:22:15"
+ },
+ "n3c_c0.mp3": {
+  "fp": "b3241e6ba9b4",
+  "md5": "b0fed6a256ae3f6112761236f72b60d7",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "染色体の変化によるものなので、治癒は困難です。ただ、できることはありますので、順にお話ししていきますね。今日は聞くだけで大丈夫ですので、ご家族で支えていきましょう。",
+  "adopted": true
+ },
+ "n3c_c1.mp3": {
+  "fp": "f799ff64f0f3",
+  "md5": "9c450c8146b5678ae5dca3f64a052650",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご心配ですよね。でも、背が低いこと以外は、ほかは健康ですから大丈夫ですよ。治療で背を伸ばしていけば、ほかのお子さんと変わらず過ごせます。",
+  "adopted": true
+ },
+ "n3c_c2.mp3": {
+  "fp": "132527a2e857",
+  "md5": "ba57d01d4b10968dfa7c7f3cd84f4275",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "急なお話でしたね。生まれ持った染色体の特徴です。染色体そのものを変える治療はありませんが、成長や健康を支える治療はあります。心臓や腎臓も、これから確かめていきます。",
+  "adopted": true
+ },
+ "n4a.mp3": {
+  "fp": "60824880586c",
+  "md5": "238b4cd76b510575354fbad6034dbcf1",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[quiet, a little tense] 生まれ持った……ということは、私の妊娠中の過ごし方が悪かったんでしょうか。私のせいですか。",
+  "adopted": true
+ },
+ "n4a_c0.mp3": {
+  "fp": "1f1768360f69",
+  "md5": "8ab513036d01de158c9fdea57c3ba348",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "それはありません。多くはたまたま起こるものです。お母さんのせいではありません。",
+  "adopted": true
+ },
+ "n4a_c1.mp3": {
+  "fp": "dbb1b9521696",
+  "md5": "f096e74c8e72966318e6c5ae8e98e99e",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "お気持ちは分かります。それより今は、これからのことを考えましょう。背が低いことには治療があります。毎日ご家庭で行う注射の治療で……",
+  "adopted": true
+ },
+ "n4a_c2.mp3": {
+  "fp": "8e88b095074f",
+  "md5": "32d1ae43501f0486d39cd142142ac730",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご自身のせいではないかと心配されているんですね。妊娠中の過ごし方が原因ではありません。お母さんにも、お父さんにも責任はありません。",
+  "adopted": true
+ },
+ "n4b.mp3": {
+  "fp": "2d680864973b",
+  "md5": "8388635456f834efb4aea994961bceed",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[confused, anxious] でも、どうしてめっけが……。妊娠中に何かしたからですか。私のせいですか。",
+  "built": "2026-10-10T22:19:38"
+ },
+ "n4b_c0.mp3": {
+  "fp": "8e88b095074f",
+  "md5": "32d1ae43501f0486d39cd142142ac730",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご自身のせいではないかと心配されているんですね。妊娠中の過ごし方が原因ではありません。お母さんにも、お父さんにも責任はありません。",
+  "adopted": true
+ },
+ "n4b_c1.mp3": {
+  "fp": "1f1768360f69",
+  "md5": "8ab513036d01de158c9fdea57c3ba348",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "それはありません。多くはたまたま起こるものです。お母さんのせいではありません。",
+  "adopted": true
+ },
+ "n4b_c2.mp3": {
+  "fp": "dbb1b9521696",
+  "md5": "f096e74c8e72966318e6c5ae8e98e99e",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "お気持ちは分かります。それより今は、これからのことを考えましょう。背が低いことには治療があります。毎日ご家庭で行う注射の治療で……",
+  "adopted": true
+ },
+ "n4c.mp3": {
+  "fp": "dd80dcff4c7e",
+  "md5": "dc0d387ab42630af13b746f6d8a2c86f",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[shaken, on the verge of tears] ……私が妊娠中にちゃんとしていなかったからですか。私のせいですよね。",
+  "adopted": true
+ },
+ "n4c_c0.mp3": {
+  "fp": "dbb1b9521696",
+  "md5": "f096e74c8e72966318e6c5ae8e98e99e",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "お気持ちは分かります。それより今は、これからのことを考えましょう。背が低いことには治療があります。毎日ご家庭で行う注射の治療で……",
+  "adopted": true
+ },
+ "n4c_c1.mp3": {
+  "fp": "8e88b095074f",
+  "md5": "32d1ae43501f0486d39cd142142ac730",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご自身のせいではないかと心配されているんですね。妊娠中の過ごし方が原因ではありません。お母さんにも、お父さんにも責任はありません。",
+  "adopted": true
+ },
+ "n4c_c2.mp3": {
+  "fp": "1f1768360f69",
+  "md5": "8ab513036d01de158c9fdea57c3ba348",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "それはありません。多くはたまたま起こるものです。お母さんのせいではありません。",
+  "adopted": true
+ },
+ "n5a.mp3": {
+  "fp": "c2a1a324b027",
+  "md5": "7689b2b3504eb7928c132320c51f8668",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[quiet, a little tense] 私のせいじゃないんですね……。めっけの背は、これから伸びるんでしょうか。",
+  "adopted": true
+ },
+ "n5a_c0.mp3": {
+  "fp": "b483df9270b4",
+  "md5": "7f857ca48370bcbaef4adaf79eb26b45",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "成長を助ける治療があります。効果には個人差がありますが、今から始める意味はあります。検査を確認して、負担も含めて一緒に相談しましょう。",
+  "adopted": true
+ },
+ "n5a_c1.mp3": {
+  "fp": "35f1b0b42516",
+  "md5": "7d5198d7ea9be62cbd4c6f5066320a06",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "大丈夫ですよ。治療すればちゃんと伸びますから、安心してください。ほかのお子さんと同じくらいまで追いつけますし、心配いりません。",
+  "adopted": true
+ },
+ "n5a_c2.mp3": {
+  "fp": "42e19da9f3f8",
+  "md5": "bdd85711675aed163151192d7f4887f4",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "治療は毎日の注射で、思春期が終わるまで続けます。費用は助成でほぼ賄えます。副作用もいくつかあって、まず注射した場所が赤くなることが……",
+  "adopted": true
+ },
+ "n5b.mp3": {
+  "fp": "e0c9a67193cd",
+  "md5": "16c1a059633575f0b472a7cc65f2fc8d",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[confused, anxious] ……そうなんですね。あの、背は伸びるんでしょうか。",
+  "adopted": true
+ },
+ "n5b_c0.mp3": {
+  "fp": "42e19da9f3f8",
+  "md5": "bdd85711675aed163151192d7f4887f4",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "治療は毎日の注射で、思春期が終わるまで続けます。費用は助成でほぼ賄えます。副作用もいくつかあって、まず注射した場所が赤くなることが……",
+  "adopted": true
+ },
+ "n5b_c1.mp3": {
+  "fp": "b483df9270b4",
+  "md5": "7f857ca48370bcbaef4adaf79eb26b45",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "成長を助ける治療があります。効果には個人差がありますが、今から始める意味はあります。検査を確認して、負担も含めて一緒に相談しましょう。",
+  "adopted": true
+ },
+ "n5b_c2.mp3": {
+  "fp": "35f1b0b42516",
+  "md5": "7d5198d7ea9be62cbd4c6f5066320a06",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "大丈夫ですよ。治療すればちゃんと伸びますから、安心してください。ほかのお子さんと同じくらいまで追いつけますし、心配いりません。",
+  "adopted": true
+ },
+ "n5c.mp3": {
+  "fp": "63d1ef6c51d1",
+  "md5": "6d2a850a96d2bad42b78aa70d613b6e3",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[shaken, on the verge of tears] 治療のお話の前に……やっぱり、私のせいではないんでしょうか。背は、伸びるんでしょうか。",
+  "adopted": true
+ },
+ "n5c_c0.mp3": {
+  "fp": "b483df9270b4",
+  "md5": "7f857ca48370bcbaef4adaf79eb26b45",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "成長を助ける治療があります。効果には個人差がありますが、今から始める意味はあります。検査を確認して、負担も含めて一緒に相談しましょう。",
+  "adopted": true
+ },
+ "n5c_c1.mp3": {
+  "fp": "35f1b0b42516",
+  "md5": "7d5198d7ea9be62cbd4c6f5066320a06",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "大丈夫ですよ。治療すればちゃんと伸びますから、安心してください。ほかのお子さんと同じくらいまで追いつけますし、心配いりません。",
+  "adopted": true
+ },
+ "n5c_c2.mp3": {
+  "fp": "a4b260141c25",
+  "md5": "be45532b046c7e24430b91d303ab627f",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "先ほどのお答えが抜けていました。お母さんのせいではありません。成長を助ける治療もあります。効果には個人差がありますが、負担も含めて一緒に相談しましょう。",
+  "adopted": true
+ },
+ "n6a.mp3": {
+  "fp": "1e2075727eda",
+  "md5": "5d6aa58baf9a38da0089a644b1114600",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[quiet, a little tense] 治療があるんですね。……背のこと以外にも、この子の将来が心配で。将来、赤ちゃんは産めますか。",
+  "adopted": true
+ },
+ "n6a_c0.mp3": {
+  "fp": "c4e659d85f0b",
+  "md5": "5f4b7f53eeeff390306220004b727d39",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "お気持ちは分かりますが、残念ながら産めません。そこは受け入れていただくほかないので、その分、できることを一緒に考えていきましょう。",
+  "adopted": true
+ },
+ "n6a_c1.mp3": {
+  "fp": "604105436f6c",
+  "md5": "bdc7b32b948571e57ffc304f8717963e",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "めっけちゃんの場合、自然に妊娠することは難しいと考えられます。急に将来の話まで出て、驚かれますよね。思春期の体の変化のほうは、ホルモンの治療で支えられます。",
+  "built": "2026-10-10T22:20:11"
+ },
+ "n6a_c2.mp3": {
+  "fp": "bfaa9a9347b6",
+  "md5": "2992418bd3406604b82702a0a1913fb3",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "妊娠は難しい見込みです。ただ、今ここで将来をすべて決める必要はありません。詳しくは次の診察で時間をとってお話ししましょう。ご希望があれば、ご主人もご一緒に。",
+  "adopted": true
+ },
+ "n6b.mp3": {
+  "fp": "71f2b5af9954",
+  "md5": "e1bb2f2bed3b9a8d66898eb1ad4612e7",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[confused, anxious] ……はい。背のこと以外にも、この子の将来が心配で。将来、赤ちゃんは産めますか。",
+  "adopted": true
+ },
+ "n6b_c0.mp3": {
+  "fp": "bfaa9a9347b6",
+  "md5": "2992418bd3406604b82702a0a1913fb3",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "妊娠は難しい見込みです。ただ、今ここで将来をすべて決める必要はありません。詳しくは次の診察で時間をとってお話ししましょう。ご希望があれば、ご主人もご一緒に。",
+  "adopted": true
+ },
+ "n6b_c1.mp3": {
+  "fp": "91a096c09560",
+  "md5": "66540889c6031af7b3d56436cfb5b2fd",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "今は医学が進んでいますから、卵子を凍結しておけば将来産めます。心配いりません。その時期が来たら、専門の病院をご紹介します。",
+  "adopted": true
+ },
+ "n6b_c2.mp3": {
+  "fp": "604105436f6c",
+  "md5": "bdc7b32b948571e57ffc304f8717963e",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "めっけちゃんの場合、自然に妊娠することは難しいと考えられます。急に将来の話まで出て、驚かれますよね。思春期の体の変化のほうは、ホルモンの治療で支えられます。",
+  "built": "2026-10-10T22:20:11"
+ },
+ "n6c.mp3": {
+  "fp": "74809aca18b4",
+  "md5": "b10b3fd1213a92114c03316701b68c5b",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[shaken, on the verge of tears] ……いろいろ伺って、まだ実感が湧かなくて。それに、この子の将来が心配で……。将来、赤ちゃんは産めますか。",
+  "adopted": true
+ },
+ "n6c_c0.mp3": {
+  "fp": "604105436f6c",
+  "md5": "bdc7b32b948571e57ffc304f8717963e",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "めっけちゃんの場合、自然に妊娠することは難しいと考えられます。急に将来の話まで出て、驚かれますよね。思春期の体の変化のほうは、ホルモンの治療で支えられます。",
+  "built": "2026-10-10T22:20:11"
+ },
+ "n6c_c1.mp3": {
+  "fp": "a13cb0d8dd56",
+  "md5": "a6689f94cb600f5bd2b3f16e3e22deac",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "大事なことですね。思春期は治療で迎えられますので、ご安心ください。妊娠のことは、次回時間をとって、資料もお見せしながら詳しくお話しします。",
+  "adopted": true
+ },
+ "n6c_c2.mp3": {
+  "fp": "bfaa9a9347b6",
+  "md5": "2992418bd3406604b82702a0a1913fb3",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "妊娠は難しい見込みです。ただ、今ここで将来をすべて決める必要はありません。詳しくは次の診察で時間をとってお話ししましょう。ご希望があれば、ご主人もご一緒に。",
+  "adopted": true
+ },
+ "n7a.mp3": {
+  "fp": "4f1efd2f1fce",
+  "md5": "73fe9d717a0fb298c3de2e500b43d5db",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[quiet, a little tense] 分かりました。……夫と、めっけ本人には、どう伝えたらいいでしょうか。",
+  "built": "2026-10-10T22:19:24"
+ },
+ "n7a_c0.mp3": {
+  "fp": "4e2dc45130f2",
+  "md5": "8412ae62f3217c9701f86af544d6a4d5",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "めっけちゃんには、まだ伏せておきましょう。小さいうちに話しても混乱しますし、大きくなってから話せば十分です。ご主人には、次回私からお話しします。",
+  "adopted": true
+ },
+ "n7a_c1.mp3": {
+  "fp": "4f89b543cb5c",
+  "md5": "e5bdd340a09a79a166e0e6dc7c3ae1fa",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご希望があれば、次回ご主人にも一緒に聞いていただけます。難しければお母さんと続けましょう。めっけちゃんには、年齢に合わせて少しずつ、一緒に伝えていきましょう。",
+  "adopted": true
+ },
+ "n7a_c2.mp3": {
+  "fp": "c0b614e4c8b4",
+  "md5": "4c7720c8c870de98b3923a2560a749da",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "本人には、通院が必要だとだけ伝えてください。難しい話はまだ分かりませんから。ご主人には、お母さんから今日のお話を説明していただければと思います。",
+  "adopted": true
+ },
+ "n7b.mp3": {
+  "fp": "09c2c2b5ef6e",
+  "md5": "ccc26504ba5934bbb202d66cff258009",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[confused, anxious] はい……。あの、夫と、めっけ本人には、どう伝えたらいいでしょうか。",
+  "adopted": true
+ },
+ "n7b_c0.mp3": {
+  "fp": "4f89b543cb5c",
+  "md5": "e5bdd340a09a79a166e0e6dc7c3ae1fa",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご希望があれば、次回ご主人にも一緒に聞いていただけます。難しければお母さんと続けましょう。めっけちゃんには、年齢に合わせて少しずつ、一緒に伝えていきましょう。",
+  "adopted": true
+ },
+ "n7b_c1.mp3": {
+  "fp": "c0b614e4c8b4",
+  "md5": "4c7720c8c870de98b3923a2560a749da",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "本人には、通院が必要だとだけ伝えてください。難しい話はまだ分かりませんから。ご主人には、お母さんから今日のお話を説明していただければと思います。",
+  "adopted": true
+ },
+ "n7b_c2.mp3": {
+  "fp": "4e2dc45130f2",
+  "md5": "8412ae62f3217c9701f86af544d6a4d5",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "めっけちゃんには、まだ伏せておきましょう。小さいうちに話しても混乱しますし、大きくなってから話せば十分です。ご主人には、次回私からお話しします。",
+  "adopted": true
+ },
+ "n7c.mp3": {
+  "fp": "2de6a77727ad",
+  "md5": "6f779ced711335ff71149b6124d1b49c",
+  "voice": "Despina",
+  "speaker": "mother",
+  "text": "[shaken, on the verge of tears] ……夫に、何て言えばいいのか。めっけ本人にも、どう伝えたらいいんでしょうか。",
+  "adopted": true
+ },
+ "n7c_c0.mp3": {
+  "fp": "c0b614e4c8b4",
+  "md5": "4c7720c8c870de98b3923a2560a749da",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "本人には、通院が必要だとだけ伝えてください。難しい話はまだ分かりませんから。ご主人には、お母さんから今日のお話を説明していただければと思います。",
+  "adopted": true
+ },
+ "n7c_c1.mp3": {
+  "fp": "4e2dc45130f2",
+  "md5": "8412ae62f3217c9701f86af544d6a4d5",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "めっけちゃんには、まだ伏せておきましょう。小さいうちに話しても混乱しますし、大きくなってから話せば十分です。ご主人には、次回私からお話しします。",
+  "adopted": true
+ },
+ "n7c_c2.mp3": {
+  "fp": "4f89b543cb5c",
+  "md5": "e5bdd340a09a79a166e0e6dc7c3ae1fa",
+  "voice": "Iapetus",
+  "speaker": "doctor",
+  "text": "ご希望があれば、次回ご主人にも一緒に聞いていただけます。難しければお母さんと続けましょう。めっけちゃんには、年齢に合わせて少しずつ、一緒に伝えていきましょう。",
+  "adopted": true
+ }
+}

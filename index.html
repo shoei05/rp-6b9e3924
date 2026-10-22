@@ -169,7 +169,7 @@ function report(id){const n=S.nodes[id],ek=n.end;
  <p class="small">この教材の目標：${S.goal}</p>
  ${corrHtml}
  <h3>場面ごとの振り返り</h3><p class="small">評価は、今回あなたが選んだ返答に対するものです。各場面の目標と、次に試したい伝え方を分けて示します。</p><table class="turns">${rows}</table>
- <div class="practice"><b>セミナー後も練習できます</b><p>自由に文章を入力して面談を練習したい方は、<a href="https://udify.app/chat/ZjWXeAjCRPbeaLnt" target="_blank" rel="noopener noreferrer">自由会話形式のロールプレイ</a>をご利用ください。「終了」と入力すると振り返りが表示されます。実在の患者さんやご家族の個人情報は入力しないでください。</p></div>
+ <div class="practice"><b>セミナー後も練習できます</b><p>この分岐型ロールプレイは、セミナー終了後も同じURLから繰り返し体験できます。「もう一度」から、別の返答を選んで振り返ってみてください。</p></div>
  <p class="small">※教育用デモ。登場人物はすべて架空です。評価は、悪い知らせを伝える手順（SPIKES）と性分化疾患診療ガイドライン2025（CQ3・CQ20）の要点を簡略化した目安で、実際の評価基準ではありません。</p>
  <button class="fbbtn" onclick="AU.src=au('feedback_${ek}.mp3');AU.play()">もう一度聞く</button><button onclick="location.href=location.pathname">もう一度</button></div>`;
  $('#overlay').style.display='grid';unlockAudio();const fa=AU;fa.onended=null;fa.src=au(`feedback_${ek}.mp3`);window.__clips.push({src:fa.src,t:(performance.now()-T0)/1000});fa.play().catch(()=>{});

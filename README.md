@@ -2,7 +2,7 @@
 
 小児科医として返答を3択から7回選び、染色体検査の結果を母親に伝える面談を練習する教育用デモです。登場人物はすべて架空です。
 
-振り返りは、性分化疾患診療ガイドライン2025、ターナー症候群診療の手引き、移行期医療ガイドなどの疾患別資料と、[ESHG承認の専門職能力枠組み（2010）](https://www.eshg.org/fileadmin/eshg/committees/EBMG/EBMGCoreCompetencesForGeneticCounsellors.pdf)を参考にしています。ESHGの公式評価や、臨床能力を測る尺度ではありません。終了画面では、説明がどう伝わったかを確かめる一言も練習できます。
+振り返りは、性分化疾患診療ガイドライン2025、ターナー症候群診療の手引き、移行期医療ガイドなどの疾患別資料と、[ESHG承認の専門職能力枠組み（2010）](https://www.eshg.org/fileadmin/eshg/committees/EBMG/EBMGCoreCompetencesForGeneticCounsellors.pdf)を参考にしています。ESHGの公式評価や、臨床能力を測る尺度ではありません。終了画面では、説明がどう伝わったかを確かめる一言も練習できます。資料の書誌・URL・使った場面の一覧は [SOURCES.md](SOURCES.md) にあります。
 
 音声は Google Gemini 3.8 Flash TTS、イラストは Gemini 3.1 Flash Image で生成しました。
 

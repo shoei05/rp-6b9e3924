@@ -177,6 +177,7 @@ function report(id){const n=S.nodes[id],ek=n.end;
  <p class="small">専門職能力枠組みの参照：<a href="https://www.eshg.org/fileadmin/eshg/committees/EBMG/EBMGCoreCompetencesForGeneticCounsellors.pdf" target="_blank" rel="noopener noreferrer">ESHG 2010</a>、3c p.2（理解の確認）、14.1 p.4（振り返り）。</p></section>
  <div class="practice"><b>セミナー後も練習できます</b><p>この分岐型ロールプレイは、セミナー終了後も同じURLから繰り返し体験できます。「もう一度」から、別の返答を選んで振り返ってみてください。</p></div>
  <p class="small">※登場人物はすべて架空です。疾患別資料と、ESHG（2010）の説明・支援に関する専門職能力を参考にした教育用教材です。返答への評価と母親の反応は教材上の設定であり、ESHGの公式評価や、臨床能力を測る尺度ではありません。</p>
+ <div class="practice"><b>講演スライド</b><p>今回の講演は第59回日本小児内分泌学会学術集会 インタラクティブプレミアムセミナーで行っています。今日の講演内容はこちらからもスライドをみることができます。</p><p><a href="slides/" target="_blank" rel="noopener noreferrer">講演スライドを開く</a></p></div>
  <button class="fbbtn" onclick="AU.src=au('feedback_${ek}.mp3');AU.play()">もう一度聞く</button><button onclick="location.href=location.pathname">もう一度</button></div>`;
  $('#overlay').style.display='grid';unlockAudio();const fa=AU;fa.onended=null;fa.src=au(`feedback_${ek}.mp3`);window.__clips.push({src:fa.src,t:(performance.now()-T0)/1000});fa.play().catch(()=>{});
  if(DEMO){let y=0;const card=$('.rep');const iv=setInterval(()=>{y+=3;card.scrollTop=y;if(y>card.scrollHeight)clearInterval(iv)},60)}}

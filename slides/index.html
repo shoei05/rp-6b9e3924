@@ -33,8 +33,8 @@ function go(k,push=true){i=Math.max(0,Math.min(D.length-1,k));const d=D[i];
  im.src='img/s'+nm(d.n)+'.jpg';im.alt=d.alt;
  if(d.v){const v=document.createElement('video');v.src='video/s'+nm(d.n)+'.mp4';v.muted=true;v.autoplay=true;v.playsInline=true;v.preload='auto';
   const[x,y,w,h]=d.v;v.style.cssText='left:'+x*100+'%;top:'+y*100+'%;width:'+w*100+'%;height:'+h*100+'%';
-  v.addEventListener('click',e=>{e.stopPropagation();v.currentTime=0;v.play()});v.title='クリックでもう一度再生';
-  v.addEventListener('error',()=>v.remove());st.appendChild(v)}
+  v.addEventListener('click',e=>{e.stopPropagation();v.style.opacity='1';v.currentTime=0;v.play()});v.title='クリックでもう一度再生';
+  v.addEventListener('error',()=>v.remove());v.addEventListener('ended',()=>{v.style.transition='opacity .4s';v.style.opacity='0'});st.appendChild(v)}
  $('pos').textContent=(i+1)+' / '+D.length;$('pv').disabled=i===0;$('nx').disabled=i===D.length-1;
  const l=$('ln');l.textContent='';(d.l||[]).forEach(([t,u])=>{const a=document.createElement('a');a.href=u;a.textContent=t;a.target='_blank';a.rel='noopener noreferrer';l.appendChild(a)});
  if(push)try{history.replaceState(null,'','#'+(i+1))}catch(e){}

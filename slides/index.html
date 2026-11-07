@@ -32,7 +32,7 @@ function go(k,push=true){i=Math.max(0,Math.min(D.length-1,k));const d=D[i];
  st.querySelectorAll('video').forEach(v=>v.remove());
  im.src='img/s'+nm(d.n)+'.jpg';im.alt=d.alt;
  if(d.v){const v=document.createElement('video');v.src='video/s'+nm(d.n)+'.mp4';v.muted=true;v.autoplay=true;v.playsInline=true;v.preload='auto';
-  const[x,y,w,h]=d.v;v.style.cssText='left:'+x*100+'%;top:'+y*100+'%;width:'+w*100+'%;height:'+h*100+'%';
+  const[x,y,w,h]=d.v;v.style.cssText='left:'+x*100+'%;top:'+y*100+'%;width:'+w*100+'%;height:'+h*100+'%';if(y+h>0.83)v.style.clipPath='inset(0 0 '+((y+h-0.825)/h*100)+'% 0)';
   v.addEventListener('click',e=>{e.stopPropagation();v.style.opacity='1';v.currentTime=0;v.play()});v.title='クリックでもう一度再生';
   v.addEventListener('error',()=>v.remove());v.addEventListener('ended',()=>{v.style.transition='opacity .4s';v.style.opacity='0'});st.appendChild(v)}
  $('pos').textContent=(i+1)+' / '+D.length;$('pv').disabled=i===0;$('nx').disabled=i===D.length-1;
